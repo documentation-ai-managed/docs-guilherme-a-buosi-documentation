@@ -1,0 +1,149 @@
+---
+title: Frequently Asked Questions
+description: Find answers to common queries about using the documentation platform. This section addresses setup issues, best practices, and troubleshooting tips.
+---
+
+## Overview
+
+You encounter common questions when setting up and managing your documentation on the Guilherme A Buosi Documentation platform. This FAQ covers account access, content management, and integration challenges. Use the expandable sections below for detailed solutions.
+
+<Callout kind="info">
+  Bookmark this page for quick reference. Search your browser for specific keywords to jump to relevant answers.
+</Callout>
+
+<Tabs>
+  <Tab title="Account and Access" icon="users">
+
+## How do I reset my password?
+
+Follow these steps to regain access:
+
+<Steps>
+  <Step title="Navigate to Login" icon="login">
+    Visit `https://docs.guibuosi.com/login` and click "Forgot Password?".
+  </Step>
+  <Step title="Enter Email" icon="mail">
+    Provide your registered email address. You receive a reset link within 5 minutes.
+  </Step>
+  <Step title="Set New Password" icon="lock">
+    Click the link and create a strong password (at least 12 characters with symbols).
+  </Step>
+</Steps>
+
+## What if two-factor authentication fails?
+
+Disable and re-enable 2FA via account settings if the app doesn't work:
+
+```javascript
+// Example: Update 2FA in your profile API
+fetch('https://api.docs.guibuosi.com/v1/profile/2fa', {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${YOUR_TOKEN}` },
+  body: JSON.stringify({ enabled: true })
+});
+```
+
+  </Tab>
+
+  <Tab title="Content Management" icon="file-text">
+
+## How do I organize MDX files effectively?
+
+Structure your docs with a clear hierarchy:
+
+<Columns cols={2}>
+  <Card title="Folder Structure" icon="folder">
+    ```
+    docs/
+    ├── pages/
+    ├── components/
+    └── data/
+    ```
+  </Card>
+  <Card title="Best Practices" icon="check-circle" horizontal>
+    Use frontmatter for metadata. Limit pages to 2000 words.
+  </Card>
+</Columns>
+
+## Can I preview changes before publishing?
+
+Yes, run a local server:
+
+<CodeGroup tabs="npm,yarn">
+  ```bash
+  npm run dev
+  ```
+  ```bash
+  yarn dev
+  ```
+</CodeGroup>
+
+<Callout kind="tip">
+  Enable hot reload in your config for instant previews.
+</Callout>
+
+  </Tab>
+
+  <Tab title="Integrations" icon="link">
+
+## How do I connect to GitHub?
+
+Set up webhooks for automatic deployments:
+
+<ExpandableGroup>
+  <Expandable title="GitHub Webhook Setup" default-open="true">
+
+  1. Go to your repo > Settings > Webhooks.
+  2. Add `https://deploy.docs.guibuosi.com/webhook/github` as Payload URL.
+  3. Select events: Push and Pull Requests.
+
+  Test with a commit push.
+
+  </Expandable>
+  <Expandable title="Troubleshoot Webhook Failures">
+
+  Check logs:
+
+  ```bash
+  curl -X POST https://deploy.docs.guibuosi.com/webhook/github \
+    -H "X-GitHub-Event: push" \
+    -d '{"ref": "refs/heads/main"}'
+  ```
+
+  Verify secret matches `YOUR_WEBHOOK_SECRET`.
+
+  </Expandable>
+</ExpandableGroup>
+
+## What about API rate limits?
+
+| Endpoint | Limit | Reset Interval |
+|----------|-------|----------------|
+| `/pages` | 100/min | Hourly |
+| `/search` | 50/min | 15 minutes |
+| `/deploy` | 10/hour | Daily |
+
+Exceeding limits returns `429 Too Many Requests`. Implement exponential backoff.
+
+  </Tab>
+</Tabs>
+
+## Advanced Troubleshooting
+
+For persistent issues, collect diagnostics:
+
+```javascript
+// Generate debug info
+const diagnostics = {
+  version: '1.2.0',
+  browser: navigator.userAgent,
+  error: 'Describe your issue here'
+};
+console.log(JSON.stringify(diagnostics, null, 2));
+```
+
+Share the output with support at `support@guibuosi.com`.
+
+<Callout kind="success">
+  Most issues resolve with cache clear (Ctrl+Shift+R) or browser restart.
+</Callout>

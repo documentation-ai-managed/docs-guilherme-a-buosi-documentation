@@ -1,0 +1,121 @@
+---
+title: Changelog
+description: Track the evolution of the Guilherme A Buosi Documentation platform through version updates, new features, and fixes. This page lists changes to keep you informed.
+---
+
+## Overview
+
+Stay current with Guilherme A Buosi Documentation enhancements. You access the latest features, bug fixes, and improvements here. Review changes by version to understand platform evolution.
+
+<Columns cols={3}>
+  <Card title="Latest Release" icon="zap" href="#v1-2-0">
+    Discover v1.2.0 updates including enhanced search and new components.
+  </Card>
+  <Card title="Previous Versions" icon="book-open" href="#v1-1-0">
+    Explore v1.1.0 and earlier changes for full history.
+  </Card>
+  <Card title="Contribute Changes" icon="github" href="https://github.com/guilhermeabuosi/docs" target="_blank">
+    Suggest improvements or report issues.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Check this page regularly or subscribe to release notifications to stay updated on Guilherme A Buosi Documentation.
+</Callout>
+
+## Recent Releases
+
+Review the most significant updates below. Each version includes new features, improvements, and bug fixes tailored to streamline your documentation workflow.
+
+<Update label="2024-11-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added `<Tabs>` component support for platform-specific instructions
+- Introduced `<Columns>` layout for responsive feature grids
+
+## Improvements
+
+- Enhanced MDX parsing speed by `{20%}` for larger pages
+- Updated Lucide icon library to latest version
+
+## Bug Fixes
+
+- Fixed nested code block rendering issues
+- Resolved frontmatter YAML parsing errors with special characters
+
+</Update>
+
+<Update label="2024-10-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Implemented `<Steps>` component for sequential guides
+- Added `<CodeGroup>` for multi-language code examples
+
+## Bug Fixes
+
+- Corrected escaping for `{` and `}` in prose text
+- Patched `<ParamField>` attribute validation
+
+</Update>
+
+<Update label="2024-09-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launched core MDX components: `<Callout>`, `<Card>`, `<Update>`
+- Integrated Mermaid diagrams via code blocks
+
+## Breaking Changes
+
+- Updated attribute syntax to require double quotes for strings
+
+</Update>
+
+## How to Stay Updated
+
+Follow these steps to monitor future releases and integrate changes into your projects.
+
+<Steps>
+  <Step title="Subscribe to Notifications" icon="bell">
+    Enable GitHub notifications for the repository.
+  </Step>
+  <Step title="Check This Changelog" icon="book-open">
+    Visit this page after each release.
+  </Step>
+  <Step title="Test New Features" icon="play">
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+      // Example: Using new Tabs component
+      <Tabs>
+        <Tab title="Node.js">console.log('Updated!');</Tab>
+      </Tabs>
+      ```
+      ```python
+      # Example: Python integration check
+      print("Guilherme A Buosi Documentation v1.2.0")
+      ```
+    </CodeGroup>
+  </Step>
+</Steps>
+
+## Common Questions
+
+<ExpandableGroup>
+  <Expandable title="How do I report a bug?" default-open="true">
+    Open an issue on GitHub with reproduction steps, expected behavior, and actual results. Include your MDX snippet if possible.
+  </Expandable>
+  <Expandable title="What tags mean in updates?">
+    Tags indicate change types: `feature` for new additions, `bugfix` for corrections, `improvement` for enhancements, and `breaking` for incompatible changes.
+  </Expandable>
+</ExpandableGroup>
+
+<Tabs>
+  <Tab title="Feature Requests" icon="star">
+    Prioritize requests by upvotes. You submit ideas via GitHub discussions.
+  </Tab>
+  <Tab title="Release Cadence" icon="calendar">
+    Expect monthly minor releases and quarterly major updates.
+  </Tab>
+</Tabs>

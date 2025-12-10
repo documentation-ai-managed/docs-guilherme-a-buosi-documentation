@@ -1,0 +1,138 @@
+---
+title: Quickstart Guide
+description: Get started with your documentation space in minutes by setting up your first project and creating content. This guide covers the essential steps for new users to begin organizing their docs.
+---
+
+## Overview
+
+Set up your Guilherme A Buosi Documentation space quickly. Follow these steps to create an account, log in, build your first page, and navigate the interface. You complete the process in under five minutes and start organizing project docs immediately.
+
+<Callout kind="tip">
+  Bookmark your dashboard after login for quick access on future visits.
+</Callout>
+
+## Prerequisites
+
+Ensure you have a modern browser like Chrome or Firefox. No additional software required for basic setup.
+
+## Account Setup and Login
+
+Create your account and log in using your preferred method.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit `https://docs.guilhermeabuosi.com/signup` and enter your email and password.
+
+    Choose a strong password with at least 12 characters.
+
+    <Image
+      src="https://example.com/signup-screenshot.png"
+      alt="Signup form with email and password fields"
+      width="800"
+      height="400"
+    />
+  </Step>
+
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for the verification link from `no-reply@guilhermeabuosi.com`.
+
+    Click the link to activate your account.
+  </Step>
+
+  <Step title="Log In" icon="log-in">
+    Return to the login page and enter your credentials.
+
+    <Tabs>
+      <Tab title="Web Browser" icon="globe">
+        Use the web interface at `https://docs.guilhermeabuosi.com/login`.
+      </Tab>
+      <Tab title="CLI" icon="terminal">
+        Install the CLI tool first:
+
+        <CodeGroup tabs="npm,yarn">
+        ```bash
+        npm install -g @guilhermeabuosi/docs-cli
+        ```
+        ```bash
+        yarn global add @guilhermeabuosi/docs-cli
+        ```
+        </CodeGroup>
+
+        Run `docs-cli login` and follow the prompts.
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Create Your First Page
+
+Build a new documentation page with MDX content.
+
+<Steps>
+  <Step title="New Project" icon="plus">
+    From the dashboard, click **New Project**.
+
+    Enter project name: `my-first-docs` and select **MDX** template.
+  </Step>
+
+  <Step title="Add Page" icon="file-plus">
+    In your project, select **New Page** and name it `quickstart.mdx`.
+
+    Paste this starter content:
+
+    ```mdx
+    ---
+    title: My First Page
+    description: Welcome to my docs.
+    ---
+
+    ## Hello World
+
+    You created your first documentation page!
+    ```
+  </Step>
+
+  <Step title="Preview and Publish" icon="eye">
+    Click **Preview** to see live rendering.
+
+    Hit **Publish** to make it live at `https://docs.guilhermeabuosi.com/my-first-docs/quickstart`.
+  </Step>
+</Steps>
+
+## Basic Navigation
+
+Master the interface to manage your docs efficiently.
+
+| Section | Purpose | Key Actions |
+|---------|---------|-------------|
+| Dashboard | Overview | View projects, recent edits |
+| Projects | Manage spaces | Create, edit, delete projects |
+| Pages | Content editor | Add pages, MDX preview, publish |
+| Settings | Configuration | API keys, themes, integrations |
+
+<Columns cols={2}>
+  <Card title="Explore Components" icon="components" href="/docs/components">
+    Learn about Cards, Steps, and Tabs to enrich your pages.
+  </Card>
+  <Card title="Customize Theme" icon="palette" href="/docs/theme">
+    Set brand color to `#3B82F6` and more.
+  </Card>
+  <Card title="API Reference" icon="api" href="/docs/api">
+    Automate with REST endpoints.
+  </Card>
+  <Card title="CLI Commands" icon="terminal" href="/docs/cli">
+    Manage docs from terminal.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Expandable title="Common Troubleshooting" default-open="false">
+  **Login fails?** Clear browser cache or try incognito mode.
+
+  **Page not publishing?** Check MDX syntax for unescaped `{` or `<` characters—wrap them in backticks like `{variable}`.
+
+  **CLI errors?** Update with `npm update -g @guilhermeabuosi/docs-cli`.
+</Expandable>
+
+You now have a fully functional documentation space. Add more pages, integrate components, and organize your projects. Explore the linked resources to go further.
